@@ -19,7 +19,7 @@ services:
           description: "Long-lived Access Token from HA Profile"
       ports: 8482
       main: ha-matter-hub
-      icon: https://raw.githubusercontent.com/symi-daguo/home-assistant-matter-hub/main/docs/assets/hamh-logo-small.png
+      icon: https://t0bst4r.github.io/home-assistant-matter-hub/build/hamh-logo-small-8718e963b2820b8f0b0515e2d9b78182.png
       title:
         en_us: "HA Matter Hub"
       tagline:
