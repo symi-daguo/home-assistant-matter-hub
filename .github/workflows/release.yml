@@ -109,7 +109,7 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Login to Docker Hub
-        if: secrets.DOCKERHUB_USERNAME != ''
+        if: "${{ secrets.DOCKERHUB_USERNAME != '' }}"
         uses: docker/login-action@v3
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
@@ -130,7 +130,7 @@ jobs:
           dockerfile: ${{ matrix.dockerfile }}
           node-version: ${{ needs.release.outputs.node-version }}
           package-version: ${{ needs.release.outputs.release-version }}
-          dockerhub-repo: ${{ secrets.DOCKERHUB_USERNAME != '' && 'panwang/home-assistant-matter-hub' || '' }}
+          dockerhub-repo: "${{ secrets.DOCKERHUB_USERNAME != '' && 'panwang/home-assistant-matter-hub' || '' }}"
 
   publish-pages:
     name: "Publish Documentation"
