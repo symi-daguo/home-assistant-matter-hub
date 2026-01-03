@@ -1,7 +1,7 @@
 name: home-assistant-matter-hub
 services:
   home-assistant-matter-hub:
-    image: ghcr.io/symi-daguo/home-assistant-matter-hub:latest
+    image: ghcr.io/symi-daguo/home-assistant-matter-hub:1.0.2
     container_name: home-assistant-matter-hub
     restart: unless-stopped
     network_mode: host
@@ -29,6 +29,10 @@ services:
           description:
             en_US: Web UI Port
             zh_CN: 网页管理界面端口
+        - container: "5540"
+          description:
+            en_US: Matter Communication Port
+            zh_CN: Matter 通信端口
       volumes:
         - container: /data
           description:
@@ -41,6 +45,7 @@ x-casaos:
     - arm
     - arm64
   main: home-assistant-matter-hub
+  port_map: "8482"
   author: symi-daguo
   category: Home Automation
   developer: t0bst4r
