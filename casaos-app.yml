@@ -1,0 +1,28 @@
+name: "HA Matter Hub"
+services:
+  ha-matter-hub:
+    image: ghcr.io/symi-daguo/home-assistant-matter-hub:latest
+    container_name: ha-matter-hub
+    restart: unless-stopped
+    network_mode: host
+    volumes:
+      - /DATA/AppData/ha-matter-hub:/data
+    environment:
+      - HAMH_HOME_ASSISTANT_URL=${HA_URL}
+      - HAMH_HOME_ASSISTANT_ACCESS_TOKEN=${HA_TOKEN}
+      - HAMH_STORAGE_LOCATION=/data
+    x-casaos:
+      envs:
+        - container: HA_URL
+          description: "Home Assistant URL (e.g., http://192.168.1.10:8123)"
+        - container: HA_TOKEN
+          description: "Long-lived Access Token from HA Profile"
+      ports: 8482
+      main: ha-matter-hub
+      icon: https://raw.githubusercontent.com/symi-daguo/home-assistant-matter-hub/main/docs/assets/hamh-logo-small.png
+      title:
+        en_us: "HA Matter Hub"
+      tagline:
+        en_us: "Bridge Home Assistant entities to Matter (HomeKit/Alexa/Google)"
+      author: "symi-daguo"
+      category: "Home Automation"
