@@ -1,7 +1,7 @@
 name: home-assistant-matter-hub
 services:
   home-assistant-matter-hub:
-    image: panwang/home-assistant-matter-hub:latest
+    image: symi/home-assistant-matter-hub:latest
     container_name: home-assistant-matter-hub
     restart: unless-stopped
     network_mode: host
