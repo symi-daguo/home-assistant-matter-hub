@@ -44,10 +44,10 @@ docker run -d \
 - **故障修复**：解决因 Home Assistant URL 格式非法导致的启动崩溃问题（Invalid URL 报错）。
 - **参数校验**：强制要求 `HA_URL` 和 `HA_TOKEN` 为必填项，并增加格式指引。
 - **图标优化**：优化图标加载逻辑，兼顾商店显示与本地环境稳定性。
-- **镜像仓库**：修正 Docker Hub 命名空间为 `symi`。
+- **镜像仓库**：修正 Docker Hub 命名空间为 `panwang` (对应登录账号)。
 
 ### v1.0.2
-- **Docker 镜像优化**：新增支持推送镜像至 Docker Hub (`symi/home-assistant-matter-hub`)，国内用户安装速度将显著提升。
+- **Docker 镜像优化**：新增支持推送镜像至 Docker Hub (`panwang/home-assistant-matter-hub`)，国内用户安装速度将显著提升。
 - **CasaOS 优化**：将 `apps/` 目录更名为 `Apps/`，以符合 CasaOS 商店对大小写敏感的要求。
 - **图标路径修复**：更新了图标和截图的 URL 链接，确保在 GitHub 上的访问路径正确。
 - **构建修复**：修复了前端构建时对 `package.json` 的引用路径问题。
