@@ -79,3 +79,9 @@ docker run -d \
    GitHub Actions 会自动检测到更新并重新构建 Docker 镜像。
 
 ---
+
+## 注意事项 (Important Notes)
+- **NPM 发布已禁用**：本项目已禁用自动向 npm 官方仓库发布包的功能，专注于通过 Docker 提供稳定可靠的服务。
+- **构建报错处理**：如果您看到关于 `npm publish` 的 E404 错误，可以忽略。我们已将发布流程改为仅生成 GitHub Release 和 Docker 镜像。
+
+---
