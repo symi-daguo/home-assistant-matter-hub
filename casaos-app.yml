@@ -8,20 +8,20 @@ services:
     volumes:
       - /DATA/AppData/$AppID/data:/data
     environment:
-      - HAMH_HOME_ASSISTANT_URL=${HA_URL}
-      - HAMH_HOME_ASSISTANT_ACCESS_TOKEN=${HA_TOKEN}
+      - HAMH_HOME_ASSISTANT_URL=${HAMH_HOME_ASSISTANT_URL}
+      - HAMH_HOME_ASSISTANT_ACCESS_TOKEN=${HAMH_HOME_ASSISTANT_ACCESS_TOKEN}
       - HAMH_STORAGE_LOCATION=/data
       - TZ=${TZ}
       - PUID=${PUID}
       - PGID=${PGID}
     x-casaos:
       envs:
-        - container: HA_URL
+        - container: HAMH_HOME_ASSISTANT_URL
           default: "http://localhost:8123"
           description:
             en_US: "Home Assistant URL (Must start with http:// or https://)"
             zh_CN: "Home Assistant 访问地址 (必须以 http:// 或 https:// 开头)"
-        - container: HA_TOKEN
+        - container: HAMH_HOME_ASSISTANT_ACCESS_TOKEN
           description:
             en_US: "Long-lived Access Token (Required! Generate in HA Profile)"
             zh_CN: "HA 长期访问令牌 (必填！在 HA 个人资料页底部生成)"
@@ -49,6 +49,7 @@ x-casaos:
   main: home-assistant-matter-hub
   scheme: http
   port_map: "8482"
+  index: /
   author: symi-daguo
   category: Home Automation
   developer: t0bst4r
