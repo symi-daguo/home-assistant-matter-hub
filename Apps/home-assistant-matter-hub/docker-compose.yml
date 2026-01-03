@@ -17,9 +17,10 @@ services:
     x-casaos:
       envs:
         - container: HA_URL
+          default: "http://localhost:8123"
           description:
-            en_US: "Home Assistant URL (e.g., http://192.168.1.10:8123)"
-            zh_CN: "Home Assistant 访问地址 (例如: http://192.168.1.10:8123)"
+            en_US: "Home Assistant URL (Default is local HA)"
+            zh_CN: "Home Assistant 访问地址 (默认为本机 HA)"
         - container: HA_TOKEN
           description:
             en_US: "Long-lived Access Token from HA Profile"
