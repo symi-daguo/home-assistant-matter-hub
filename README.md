@@ -40,6 +40,11 @@ docker run -d \
 
 ## Release Notes
 
+### v1.0.3
+- **Bug Fix**: Resolved fatal crash caused by invalid Home Assistant URL format (Invalid URL error).
+- **Validation**: Marked `HA_URL` and `HA_TOKEN` as mandatory with format guidance.
+- **Icon Optimization**: Improved icon loading to ensure visibility in both online and offline environments.
+
 ### v1.0.2
 - **CasaOS Optimization**: Renamed `apps/` directory to `Apps/` to comply with CasaOS AppStore case-sensitivity requirements.
 - **Icon Path**: Updated icon and screenshot URLs to use the correct case-sensitive paths.

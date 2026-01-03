@@ -19,12 +19,12 @@ services:
         - container: HA_URL
           default: "http://localhost:8123"
           description:
-            en_US: "Home Assistant URL (Default is local HA)"
-            zh_CN: "Home Assistant 访问地址 (默认为本机 HA)"
+            en_US: "Home Assistant URL (Must start with http:// or https://)"
+            zh_CN: "Home Assistant 访问地址 (必须以 http:// 或 https:// 开头)"
         - container: HA_TOKEN
           description:
-            en_US: "Long-lived Access Token from HA Profile"
-            zh_CN: "Home Assistant 长期访问令牌 (在个人资料页底部生成)"
+            en_US: "Long-lived Access Token (Required! Generate in HA Profile)"
+            zh_CN: "HA 长期访问令牌 (必填！在 HA 个人资料页底部生成)"
       ports:
         - container: "8482"
           host: "8482"
