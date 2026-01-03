@@ -26,6 +26,7 @@ services:
             zh_CN: "Home Assistant 长期访问令牌 (在个人资料页底部生成)"
       ports:
         - container: "8482"
+          host: "8482"
           description:
             en_US: Web UI Port
             zh_CN: 网页管理界面端口
@@ -45,6 +46,7 @@ x-casaos:
     - arm
     - arm64
   main: home-assistant-matter-hub
+  scheme: http
   port_map: "8482"
   author: symi-daguo
   category: Home Automation
