@@ -127,7 +127,7 @@ jobs:
           dockerfile: ${{ matrix.dockerfile }}
           node-version: ${{ needs.release.outputs.node-version }}
           package-version: ${{ needs.release.outputs.release-version }}
-          dockerhub-repo: symi/home-assistant-matter-hub
+          dockerhub-repo: panwang/home-assistant-matter-hub
 
   publish-pages:
     name: "Publish Documentation"
