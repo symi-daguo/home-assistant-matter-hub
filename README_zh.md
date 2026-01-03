@@ -39,11 +39,14 @@ docker run -d \
 ---
 
 ## CasaOS 一键部署
-本项目已针对 CasaOS 优化。您可以直接导入 `casaos-app.yml` 文件进行安装，或者在应用商店中搜索（如果已收录）。
+本项目已针对 CasaOS 优化。
+
+- **方案 A (手动)**：您可以直接导入 `casaos-app.yml` 文件进行安装。
+- **方案 B (商店上架)**：本项目已按照 CasaOS 官方应用商店规范准备。提交文件位于 `Apps/home-assistant-matter-hub` 目录下。
 
 **关键配置：**
 - **网络模式**：必须设置为 `Host` 模式，否则 Matter 的 mDNS 设备发现将无法工作。
-- **存储权限**：确保挂载的 `/data` 目录具有读写权限。
+- **存储路径**：应用使用 `/DATA/AppData/$AppID/data` 进行持久化存储。
 
 ---
 

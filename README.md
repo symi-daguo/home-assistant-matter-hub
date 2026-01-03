@@ -39,11 +39,14 @@ docker run -d \
 ---
 
 ## CasaOS One-Click Deployment
-This project is optimized for CasaOS. You can import the `casaos-app.yml` file for a one-click installation.
+This project is optimized for CasaOS. 
+
+- **Option A (Manual)**: You can import the `casaos-app.yml` file for a quick installation.
+- **Option B (AppStore Submission)**: The project is prepared for the official CasaOS AppStore. You can find the submission files in the `Apps/home-assistant-matter-hub` directory.
 
 **Important:**
 - **Network Mode**: Must be set to `Host` to ensure Matter mDNS discovery works correctly.
-- **Storage**: Ensure the mounted `/data` directory has appropriate permissions.
+- **Storage**: The app uses `/DATA/AppData/$AppID/data` for persistent storage.
 
 ---
 

@@ -1,7 +1,7 @@
 name: home-assistant-matter-hub
 services:
   home-assistant-matter-hub:
-    image: ghcr.io/symi-daguo/home-assistant-matter-hub:latest
+    image: ghcr.io/symi-daguo/home-assistant-matter-hub:1.0.1
     container_name: home-assistant-matter-hub
     restart: unless-stopped
     network_mode: host
@@ -54,3 +54,5 @@ x-casaos:
     en_US: "HA Matter Hub"
     zh_CN: "HA Matter 枢纽"
   icon: https://raw.githubusercontent.com/symi-daguo/home-assistant-matter-hub/main/Apps/home-assistant-matter-hub/icon.png
+  screenshot_link:
+    - https://raw.githubusercontent.com/symi-daguo/home-assistant-matter-hub/main/Apps/home-assistant-matter-hub/screenshot-1.png
