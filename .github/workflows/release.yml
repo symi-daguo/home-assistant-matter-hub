@@ -62,10 +62,10 @@ jobs:
           cat "$GITHUB_OUTPUT"
 
       - name: Package Artifact
-        uses: actions/upload-artifact@v5
+        uses: actions/upload-artifact@v4
         with:
           name: package.tgz
-          path: apps/home-assistant-matter-hub/package.tgz
+          path: Apps/home-assistant-matter-hub/package.tgz
       - name: Upload Documentation
         if: steps.release.outputs.release-version != ''
         uses: actions/upload-pages-artifact@v4
@@ -110,7 +110,7 @@ jobs:
         uses: actions/download-artifact@v6
         with:
           name: package.tgz
-          path: apps/home-assistant-matter-hub/
+          path: Apps/home-assistant-matter-hub/
           merge-multiple: true
 
       - name: Build Docker

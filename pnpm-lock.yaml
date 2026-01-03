@@ -82,7 +82,7 @@ importers:
         specifier: ^4.0.15
         version: 4.0.15(@types/node@24.10.1)(tsx@4.21.0)(yaml@2.8.1)
 
-  apps/home-assistant-matter-hub:
+  Apps/home-assistant-matter-hub:
     dependencies:
       '@matter/general':
         specifier: 0.15.6
