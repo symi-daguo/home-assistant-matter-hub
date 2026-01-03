@@ -41,10 +41,11 @@ docker run -d \
 ## 更新日志
 
 ### v1.0.2
+- **Docker 镜像优化**：新增支持推送镜像至 Docker Hub (`symi/home-assistant-matter-hub`)，国内用户安装速度将显著提升。
 - **CasaOS 优化**：将 `apps/` 目录更名为 `Apps/`，以符合 CasaOS 商店对大小写敏感的要求。
 - **图标路径修复**：更新了图标和截图的 URL 链接，确保在 GitHub 上的访问路径正确。
-- **版本号固定**：将 Docker 镜像标签固定为 `1.0.2`，确保部署稳定性。
 - **构建修复**：修复了前端构建时对 `package.json` 的引用路径问题。
+- **端口管理**：显式分配 5540 端口用于 Matter 通信，并自动关联 Web UI 端口。
 
 ### v1.0.1
 - **初始 CasaOS 支持**：添加了 `casaos-app.yml` 和商店提交所需的目录结构。

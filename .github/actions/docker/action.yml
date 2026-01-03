@@ -17,6 +17,10 @@ inputs:
   channel:
     description: "The channel tag to add"
     required: true
+  dockerhub-repo:
+    description: "The Docker Hub repository to push to (e.g. 303316404/home-assistant-matter-hub)"
+    required: false
+    default: ""
 
 runs:
   using: composite
@@ -32,11 +36,16 @@ runs:
 
         if [ "$DOCKER_TYPE" = "standalone" ]; then
           DOCKER_IMAGE="${DOCKER_IMAGE_BASENAME}"
+          DOCKERHUB_IMAGE="${{ inputs.dockerhub-repo }}"
         else
           DOCKER_IMAGE="${DOCKER_IMAGE_BASENAME}-$DOCKER_TYPE"
+          if [ -n "${{ inputs.dockerhub-repo }}" ]; then
+            DOCKERHUB_IMAGE="${{ inputs.dockerhub-repo }}-$DOCKER_TYPE"
+          fi
         fi
         
-        echo "dockertag=$DOCKER_IMAGE" >> "$GITHUB_OUTPUT" 
+        echo "dockertag=$DOCKER_IMAGE" >> "$GITHUB_OUTPUT"
+        echo "dockerhubtag=$DOCKERHUB_IMAGE" >> "$GITHUB_OUTPUT"
         echo "context=$CONTEXT" >> "$GITHUB_OUTPUT"
 
     - name: Build Docker image
@@ -52,3 +61,5 @@ runs:
         tags: |
           ${{ steps.meta.outputs.dockertag }}:${{ inputs.package-version }}
           ${{ steps.meta.outputs.dockertag }}:${{ inputs.channel }}
+          ${{ steps.meta.outputs.dockerhubtag != '' && format('{0}:{1}', steps.meta.outputs.dockerhubtag, inputs.package-version) || '' }}
+          ${{ steps.meta.outputs.dockerhubtag != '' && format('{0}:{1}', steps.meta.outputs.dockerhubtag, inputs.channel) || '' }}
