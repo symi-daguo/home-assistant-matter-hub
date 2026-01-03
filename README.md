@@ -28,7 +28,7 @@ docker run -d \
   -v /DATA/AppData/ha-matter-hub:/data \
   -e HAMH_HOME_ASSISTANT_URL="http://YOUR_HA_IP:8123" \
   -e HAMH_HOME_ASSISTANT_ACCESS_TOKEN="YOUR_TOKEN" \
-  ghcr.io/symi-daguo/home-assistant-matter-hub:latest
+  panwang/home-assistant-matter-hub:latest
 ```
 
 ### 2. Environment Variables
@@ -93,7 +93,7 @@ To keep your fork up to date with the original [t0bst4r](https://github.com/t0bs
 ## Important Notes
 - **NPM Publish Disabled**: Automatic publishing to npm has been disabled to focus on Docker distribution.
 - **GitHub Actions**: All builds and image pushes are handled automatically by GitHub Actions.
-- **Image Namespace**: Images are hosted at `ghcr.io/symi-daguo/home-assistant-matter-hub`.
+- **Image Namespace**: Main images are hosted at Docker Hub: `panwang/home-assistant-matter-hub`.
 - **Icon Visibility**: The app icon uses the GitHub Raw URL to ensure visibility in the CasaOS AppStore.
 
 ---

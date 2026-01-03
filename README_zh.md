@@ -28,7 +28,7 @@ docker run -d \
   -v /DATA/AppData/ha-matter-hub:/data \
   -e HAMH_HOME_ASSISTANT_URL="http://你的HA_IP:8123" \
   -e HAMH_HOME_ASSISTANT_ACCESS_TOKEN="你的长期令牌" \
-  ghcr.io/symi-daguo/home-assistant-matter-hub:latest
+  panwang/home-assistant-matter-hub:latest
 ```
 
 ### 2. 环境变量
@@ -95,7 +95,7 @@ docker run -d \
 ## 注意事项
 - **NPM 发布**：本项目已禁用自动向 npmjs.org 发布包的功能，专注于 Docker 镜像分发。
 - **构建状态**：所有的构建和镜像推送均由 GitHub Actions 自动化完成。
-- **镜像命名**：镜像托管于 GitHub Container Registry (GHCR)，路径为 `ghcr.io/symi-daguo/home-assistant-matter-hub`。
+- **镜像命名**：主镜像托管于 Docker Hub，路径为 `panwang/home-assistant-matter-hub`。
 - **图标显示**：应用图标使用 GitHub Raw URL 以确保在 CasaOS 商店中正常显示。
 
 ---
