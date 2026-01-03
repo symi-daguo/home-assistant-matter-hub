@@ -1,58 +1,75 @@
-# Home-Assistant-Matter-Hub
+# Home Assistant Matter Hub
 
 !["Home-Assistant-Matter-Hub"](./packages/docs/assets/hamh-logo-small.png)
 
 ---
 
-> [!IMPORTANT]  
-> ⚠️ **Maintainer Wanted**
->
-> This project (*Home-Assistant-Matter-Hub*) is currently **looking for a new maintainer**.  
-> Due to limited time, I can no longer actively maintain it.
->
-> 👉 If you are interested in taking over or co-maintaining, please reach out via [GitHub Discussions](https://github.com/t0bst4r/home-assistant-matter-hub/discussions/825) or my profile.
+## 🌐 Language / 语言
+- [English (Current)](#english)
+- [简体中文](#简体中文)
 
 ---
 
-## About
+<a name="english"></a>
 
-This project simulates bridges to publish your entities from Home Assistant to any Matter-compatible controller like
-Alexa, Apple Home or Google Home. Using Matter, those can be connected easily using local communication without the need
-of port forwarding etc.
+## English
+
+### About
+This project simulates bridges to publish your entities from Home Assistant to any Matter-compatible controller like Alexa, Apple Home, or Google Home. Using Matter, those can be connected easily using local communication without the need for port forwarding.
+
+### Documentation
+Please see the [official documentation](https://t0bst4r.github.io/home-assistant-matter-hub) for detailed instructions.
+
+### Docker Deployment
+1. **Quick Start**:
+   ```bash
+   docker run -d \
+     --name ha-matter-hub \
+     --network host \
+     -v /DATA/AppData/ha-matter-hub:/data \
+     -e HAMH_HOME_ASSISTANT_URL="http://YOUR_HA_IP:8123" \
+     -e HAMH_HOME_ASSISTANT_ACCESS_TOKEN="YOUR_TOKEN" \
+     ghcr.io/symi-daguo/home-assistant-matter-hub:latest
+   ```
+
+2. **Environment Variables**:
+   - `HAMH_HOME_ASSISTANT_URL`: Your Home Assistant URL.
+   - `HAMH_HOME_ASSISTANT_ACCESS_TOKEN`: Long-lived access token from HA.
+   - `HAMH_STORAGE_LOCATION`: Path for persistent data (default: `/data`).
 
 ---
 
-## Documentation
+<a name="简体中文"></a>
 
-Please see the [documentation](https://t0bst4r.github.io/home-assistant-matter-hub) for installation instructions,
-known issues, limitations and guides.
+## 简体中文
 
----
+### 项目简介
+本项目通过模拟 Matter 桥接器，将 Home Assistant 中的实体发布到任何兼容 Matter 的控制器（如 Alexa、Apple Home 或 Google Home）。通过 Matter 协议，可以实现完全本地化的通信，无需配置端口转发。
 
-## Docker 部署指南 (Docker Deployment Guide)
+### 相关文档
+详细的安装指引、已知问题和限制请参考 [官方文档](https://t0bst4r.github.io/home-assistant-matter-hub)。
 
-### 1. 快速启动 (Quick Start)
-使用以下命令快速启动容器：
+### Docker 部署指南
+1. **快速启动**:
+   ```bash
+   docker run -d \
+     --name ha-matter-hub \
+     --network host \
+     -v /DATA/AppData/ha-matter-hub:/data \
+     -e HAMH_HOME_ASSISTANT_URL="http://你的HA_IP:8123" \
+     -e HAMH_HOME_ASSISTANT_ACCESS_TOKEN="你的长期令牌" \
+     ghcr.io/symi-daguo/home-assistant-matter-hub:latest
+   ```
 
-```bash
-docker run -d \
-  --name ha-matter-hub \
-  --network host \
-  -v /DATA/AppData/ha-matter-hub:/data \
-  -e HAMH_HOME_ASSISTANT_URL="http://YOUR_HA_IP:8123" \
-  -e HAMH_HOME_ASSISTANT_ACCESS_TOKEN="YOUR_LONG_LIVED_ACCESS_TOKEN" \
-  ghcr.io/symi-daguo/home-assistant-matter-hub:latest
-```
-
-### 2. 环境变量 (Environment Variables)
-- `HAMH_HOME_ASSISTANT_URL`: Home Assistant 的访问地址。
-- `HAMH_HOME_ASSISTANT_ACCESS_TOKEN`: HA 的长期访问令牌（在 HA 用户个人资料页生成）。
-- `HAMH_STORAGE_LOCATION`: 数据存储路径，默认为 `/data`。
+2. **环境变量**:
+   - `HAMH_HOME_ASSISTANT_URL`: Home Assistant 访问地址。
+   - `HAMH_HOME_ASSISTANT_ACCESS_TOKEN`: HA 长期访问令牌（在 HA 用户个人资料页生成）。
+   - `HAMH_STORAGE_LOCATION`: 数据持久化路径（默认 `/data`）。
 
 ---
 
 ## CasaOS 一键部署 (CasaOS One-Click)
-本项目已针对 CasaOS 优化。您可以直接导入 `casaos-app.yml` 文件进行安装，或在应用商店中搜索。
+本项目已针对 CasaOS 优化。您可以直接导入 `casaos-app.yml` 文件进行安装。
 
 **注意：** 必须使用 `host` 网络模式以确保 Matter 协议的 mDNS 发现功能正常工作。
 
@@ -76,12 +93,12 @@ docker run -d \
    ```bash
    git push origin main
    ```
-   GitHub Actions 会自动检测到更新并重新构建 Docker 镜像。
 
 ---
 
 ## 注意事项 (Important Notes)
-- **NPM 发布已禁用**：本项目已禁用自动向 npm 官方仓库发布包的功能，专注于通过 Docker 提供稳定可靠的服务。
-- **构建报错处理**：如果您看到关于 `npm publish` 的 E404 错误，可以忽略。我们已将发布流程改为仅生成 GitHub Release 和 Docker 镜像。
+- **NPM 发布已禁用**：本项目已禁用自动向 npm 官方仓库发布包的功能，专注于通过 Docker 提供服务。
+- **GitHub Pages / Addon Repository**: 已禁用 GitHub Pages 部署和 Addon 仓库同步，以避免因权限不足导致的构建失败。
+- **镜像命名**: 所有的镜像现在都将推送到 `ghcr.io/symi-daguo/home-assistant-matter-hub` 命名空间下。
 
 ---
