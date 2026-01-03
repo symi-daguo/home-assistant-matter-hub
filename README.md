@@ -38,6 +38,20 @@ docker run -d \
 
 ---
 
+## Release Notes
+
+### v1.0.2
+- **CasaOS Optimization**: Renamed `apps/` directory to `Apps/` to comply with CasaOS AppStore case-sensitivity requirements.
+- **Icon Path**: Updated icon and screenshot URLs to use the correct case-sensitive paths.
+- **Fixed Versioning**: Fixed Docker image tag to `1.0.2` for stable deployment.
+- **TypeScript Fixes**: Corrected package.json imports for frontend build consistency.
+
+### v1.0.1
+- **Initial CasaOS Support**: Added `casaos-app.yml` and AppStore submission structure.
+- **Docker Migration**: Moved from generic `latest` tags to semantic versioning.
+
+---
+
 ## CasaOS One-Click Deployment
 This project is optimized for CasaOS. 
 
@@ -75,3 +89,6 @@ To keep your fork up to date with the original [t0bst4r](https://github.com/t0bs
 - **NPM Publish Disabled**: Automatic publishing to npm has been disabled to focus on Docker distribution.
 - **GitHub Actions**: All builds and image pushes are handled automatically by GitHub Actions.
 - **Image Namespace**: Images are hosted at `ghcr.io/symi-daguo/home-assistant-matter-hub`.
+- **Icon Visibility**: The app icon uses the GitHub Raw URL to ensure visibility in the CasaOS AppStore.
+
+---

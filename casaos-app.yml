@@ -54,3 +54,5 @@ x-casaos:
     en_US: "HA Matter Hub"
     zh_CN: "HA Matter 枢纽"
   icon: https://raw.githubusercontent.com/symi-daguo/home-assistant-matter-hub/main/Apps/home-assistant-matter-hub/icon.png
+  screenshot_link:
+    - https://raw.githubusercontent.com/symi-daguo/home-assistant-matter-hub/main/Apps/home-assistant-matter-hub/screenshot-1.png

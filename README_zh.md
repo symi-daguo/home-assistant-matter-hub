@@ -38,6 +38,20 @@ docker run -d \
 
 ---
 
+## 更新日志
+
+### v1.0.2
+- **CasaOS 优化**：将 `apps/` 目录更名为 `Apps/`，以符合 CasaOS 商店对大小写敏感的要求。
+- **图标路径修复**：更新了图标和截图的 URL 链接，确保在 GitHub 上的访问路径正确。
+- **版本号固定**：将 Docker 镜像标签固定为 `1.0.2`，确保部署稳定性。
+- **构建修复**：修复了前端构建时对 `package.json` 的引用路径问题。
+
+### v1.0.1
+- **初始 CasaOS 支持**：添加了 `casaos-app.yml` 和商店提交所需的目录结构。
+- **Docker 迁移**：从通用的 `latest` 标签迁移到语义化版本控制。
+
+---
+
 ## CasaOS 一键部署
 本项目已针对 CasaOS 优化。
 
@@ -75,3 +89,6 @@ docker run -d \
 - **NPM 发布**：本项目已禁用自动向 npmjs.org 发布包的功能，专注于 Docker 镜像分发。
 - **构建状态**：所有的构建和镜像推送均由 GitHub Actions 自动化完成。
 - **镜像命名**：镜像托管于 GitHub Container Registry (GHCR)，路径为 `ghcr.io/symi-daguo/home-assistant-matter-hub`。
+- **图标显示**：应用图标使用 GitHub Raw URL 以确保在 CasaOS 商店中正常显示。
+
+---
